@@ -36,10 +36,8 @@ public class CrawlService {
                 CrawlResult crawlResult = new CrawlResult(kw);
                 crawlResult.setSearchId(searchId);
 
-                // Envie a requisição POST e obtenha a resposta com os foundIds
                 List<String> foundIds = myRequest.sendPostRequest(keyword);
 
-                // Salve o CrawlResult no repositório
                 crawlRepository.saveCrawlResult(searchId, crawlResult);
 
                 searchIds.addAll(foundIds);
@@ -62,11 +60,9 @@ public class CrawlService {
 
             return crawlResult;
         } else {
-            // Lidar com o caso em que o searchId não foi encontrado
-            return null;
+            throw new RuntimeException("Search ID not found");
         }
     }
-
 
     private List<String> crawlWebsite(String baseUrl) {
         List<String> foundUrls = new ArrayList<>();
@@ -86,7 +82,6 @@ public class CrawlService {
                     response.append(line);
                 }
 
-                // Analise o conteúdo HTML em busca de URLs com a palavra-chave
                 String htmlContent = response.toString();
                 foundUrls.addAll(findUrlsWithKeyword(htmlContent, baseUrl));
             } else {

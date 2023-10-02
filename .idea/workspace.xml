@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c710c8a5-2c58-4380-a8f3-ac04b4b51c7d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/axreng/backend/controller/CrawlController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axreng/backend/controller/CrawlController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/axreng/backend/domain/CrawlResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axreng/backend/domain/CrawlResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/axreng/backend/services/CrawlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axreng/backend/services/CrawlService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/axreng/backend/util/MyRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axreng/backend/util/MyRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/axreng/backend/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axreng/backend/util/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/WebCrawler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/controller/CrawlController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/domain/CrawlResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/repositories/CrawlRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/repositories/CrawlRepositoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/services/CrawlService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/util/MyRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/util/MyResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/util/Util.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +48,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/tamara.brito@VALEMOBI.CORP/workspace/valemobi/39/valemobi",
@@ -49,7 +56,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.43365383",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
@@ -61,6 +68,7 @@
       <recent name="$PROJECT_DIR$/axreng-test/axreng-test/src/main/java/com/axreng/backend/services" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Otávio\Desktop\webcrawl\src" />
       <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -68,36 +76,10 @@
       <recent name="com.axreng.backend.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.com.axreng.backend.WebCrawler">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.java.com.axreng.backend.Main" />
-      <module name="Desafio Java Backend v2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.java.com.axreng.backend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.UtilTest.testGenerateID">
     <configuration name="WebCrawler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="WebCrawler" />
       <module name="backend-test" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="com.axreng.backend.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.axreng.backend.Main" />
-      <module name="backend-test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.axreng.backend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -115,12 +97,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CrawlServiceTest.testGetCrawlResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend-test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CrawlServiceTest" />
+      <option name="METHOD_NAME" value="testGetCrawlResult" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CrawlServiceTest.testInitiateCrawlWithValidKeyword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend-test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CrawlServiceTest" />
+      <option name="METHOD_NAME" value="testInitiateCrawlWithValidKeyword" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UtilTest.testGenerateID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend-test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UtilTest" />
+      <option name="METHOD_NAME" value="testGenerateID" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UtilTest.testGenerateID" />
+        <item itemvalue="JUnit.CrawlServiceTest.testGetCrawlResult" />
+        <item itemvalue="JUnit.CrawlServiceTest.testInitiateCrawlWithValidKeyword" />
         <item itemvalue="Application.com.axreng.backend.WebCrawler" />
         <item itemvalue="Application.WebCrawler" />
-        <item itemvalue="Application.com.axreng.backend.Main" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -136,7 +149,7 @@
       <workItem from="1695851356638" duration="170000" />
       <workItem from="1695851536098" duration="1118000" />
       <workItem from="1695852983906" duration="60000" />
-      <workItem from="1696186165641" duration="12902000" />
+      <workItem from="1696186165641" duration="15623000" />
     </task>
     <servers />
   </component>
@@ -165,6 +178,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/axreng/backend/WebCrawler.java</url>
           <line>16</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/axreng/backend/services/CrawlService.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
