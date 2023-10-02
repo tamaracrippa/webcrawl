@@ -2,7 +2,6 @@ package com.axreng.backend.controller;
 
 import com.axreng.backend.domain.CrawlResult;
 import com.axreng.backend.services.CrawlService;
-
 import com.axreng.backend.util.MyRequest;
 import com.axreng.backend.util.MyResponse;
 import com.google.gson.Gson;
@@ -23,14 +22,15 @@ public class CrawlController {
             response.type("application/json");
 
             MyRequest parsedRequest = gson.fromJson(request.body(), MyRequest.class);
+            String keyword = parsedRequest.getKeyword(); // Obtenha a palavra-chave fornecida pelo usuário
 
-            if (parsedRequest.getKeyword().length() < 4 || parsedRequest.getKeyword().length() > 32) {
+            if (keyword.length() < 4 || keyword.length() > 32) {
                 response.status(400); // Bad Request
                 MyResponse errorResponse = new MyResponse("O termo de busca deve ter entre 4 e 32 caracteres.");
                 return gson.toJson(errorResponse);
             }
 
-            String searchId = crawlService.initiateCrawl("security").toString();
+            String searchId = crawlService.initiateCrawl(keyword).toString(); // Use a palavra-chave fornecida pelo usuário
 
             response.status(200); // OK
             MyResponse successResponse = new MyResponse(searchId);
@@ -55,4 +55,3 @@ public class CrawlController {
         });
     }
 }
-
