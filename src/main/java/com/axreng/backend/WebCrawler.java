@@ -11,9 +11,9 @@ import spark.Spark;
 import java.util.List;
 
 public class WebCrawler {
-    private static final String baseUrl = "http://hiring.axreng.com/";
 
     public static void main(String[] args) {
+        String baseUrl = System.getenv("BASE_URL");
         MyRequest myRequest = new MyRequest();
         Util util = new Util();
         CrawlRepository crawlRepository = new CrawlRepositoryImpl();
