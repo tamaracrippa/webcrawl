@@ -5,24 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c710c8a5-2c58-4380-a8f3-ac04b4b51c7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/axreng/backend/util/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/axreng/backend/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axreng/backend/WebCrawler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/axreng/backend/controller/CrawlController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axreng/backend/controller/CrawlController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/axreng/backend/domain/CrawlResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axreng/backend/domain/CrawlResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/axreng/backend/repositories/CrawlRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axreng/backend/repositories/CrawlRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/axreng/backend/repositories/CrawlRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axreng/backend/repositories/CrawlRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/axreng/backend/services/CrawlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axreng/backend/services/CrawlService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/axreng/backend/util/MyRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axreng/backend/util/MyRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/controller/CrawlController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/domain/CrawlResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/repositories/CrawlRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/repositories/CrawlRepositoryImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/services/CrawlService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/util/MyRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axreng/backend/util/MyResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/axreng/backend/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axreng/backend/util/Util.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +63,9 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.axreng.backend.domain" />
     </key>
   </component>
   <component name="RunManager" selected="Application.com.axreng.backend.WebCrawler">
@@ -145,7 +136,7 @@
       <workItem from="1695851356638" duration="170000" />
       <workItem from="1695851536098" duration="1118000" />
       <workItem from="1695852983906" duration="60000" />
-      <workItem from="1696186165641" duration="8894000" />
+      <workItem from="1696186165641" duration="12902000" />
     </task>
     <servers />
   </component>

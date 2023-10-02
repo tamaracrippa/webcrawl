@@ -50,12 +50,12 @@ public class CrawlService {
         }
     }
 
-        public CrawlResult getCrawlResult(String searchId, String baseUrl) {
+    public CrawlResult getCrawlResult(String searchId, String baseUrl) {
         CrawlResult crawlResult = crawlRepository.getCrawlResult(searchId);
 
         if (crawlResult != null) {
             if ("active".equals(crawlResult.getStatus())) {
-                List<String> foundUrls = crawlWebsite(searchId, baseUrl );
+                List<String> foundUrls = crawlWebsite(baseUrl);
                 crawlResult.setUrls(foundUrls);
                 crawlResult.setStatus("done");
             }
@@ -67,11 +67,12 @@ public class CrawlService {
         }
     }
 
-    private List<String> crawlWebsite(String keyword, String baseUrl) {
+
+    private List<String> crawlWebsite(String baseUrl) {
         List<String> foundUrls = new ArrayList<>();
 
         try {
-            URL url = new URL(baseUrl); // Use a baseUrl definida como atributo da classe
+            URL url = new URL(baseUrl); // Use a baseUrl fornecida como argumento
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
 
@@ -87,25 +88,25 @@ public class CrawlService {
 
                 // Analise o conteúdo HTML em busca de URLs com a palavra-chave
                 String htmlContent = response.toString();
-                foundUrls.addAll(findUrlsWithKeyword(htmlContent, keyword));
+                foundUrls.addAll(findUrlsWithKeyword(htmlContent, baseUrl));
             } else {
                 System.out.println("Falha ao conectar ao site. Código de resposta: " + responseCode);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-       return foundUrls;
+
+        return foundUrls;
     }
 
-
-    private static List<String> findUrlsWithKeyword(String htmlContent, String keyword) {
+    private List<String> findUrlsWithKeyword(String htmlContent, String baseUrl) {
         List<String> urls = new ArrayList<>();
         Pattern pattern = Pattern.compile("<a\\s+(?:[^>]*?\\s+)?href=([\"'])(.*?)\\1");
 
         Matcher matcher = pattern.matcher(htmlContent);
         while (matcher.find()) {
             String url = matcher.group(2);
-            if (url.contains(keyword)) {
+            if (url.contains(baseUrl)) {
                 urls.add(url);
             }
         }

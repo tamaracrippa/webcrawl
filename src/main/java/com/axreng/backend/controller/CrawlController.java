@@ -22,7 +22,7 @@ public class CrawlController {
             response.type("application/json");
 
             MyRequest parsedRequest = gson.fromJson(request.body(), MyRequest.class);
-            String keyword = parsedRequest.getKeyword(); // Obtenha a palavra-chave fornecida pelo usuário
+            String keyword = parsedRequest.getKeyword();
 
             if (keyword.length() < 4 || keyword.length() > 32) {
                 response.status(400); // Bad Request
@@ -30,12 +30,13 @@ public class CrawlController {
                 return gson.toJson(errorResponse);
             }
 
-            String searchId = crawlService.initiateCrawl(keyword).toString(); // Use a palavra-chave fornecida pelo usuário
+            String searchId = crawlService.initiateCrawl(keyword).toString();
 
-            response.status(200); // OK
+            response.status(200);
             MyResponse successResponse = new MyResponse(searchId);
             return gson.toJson(successResponse);
         });
+
 
         Spark.get("/crawl/:id", (request, response) -> {
             response.type("application/json");
@@ -45,10 +46,10 @@ public class CrawlController {
             CrawlResult crawlResult = crawlService.getCrawlResult(searchId, baseUrl);
 
             if (crawlResult != null) {
-                response.status(200); // OK
+                response.status(200);
                 return gson.toJson(crawlResult);
             } else {
-                response.status(404); // Not Found
+                response.status(404);
                 MyResponse errorResponse = new MyResponse("Busca não encontrada.");
                 return gson.toJson(errorResponse);
             }

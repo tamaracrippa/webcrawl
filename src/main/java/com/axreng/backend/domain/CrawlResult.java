@@ -4,26 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CrawlResult {
-    private String searchId;
-    private String keyword;
+    private String id;
     private String status;
     private List<String> urls;
 
-    public CrawlResult(String keyword) {
-        this.keyword = keyword;
+    public CrawlResult(String id) {
+        this.id = id;
         this.status = "active";
         this.urls = new ArrayList<>();
     }
-    public void setSearchId(String searchId) {
-        this.searchId = searchId;
-    }
-
-    public String getKeyword() {
-        return keyword;
-    }
-
-    public void setKeyword(String keyword) {
-        this.keyword = keyword;
+    public void setSearchId(String id) {
+        this.id = id;
     }
 
     public String getStatus() {

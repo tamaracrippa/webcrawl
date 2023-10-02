@@ -20,6 +20,7 @@ public class MyRequest {
         this.keyword = keyword;
     }
 
+
     public List<String> sendPostRequest(String keyword) {
         List<String> foundIds = new ArrayList<>();
 
