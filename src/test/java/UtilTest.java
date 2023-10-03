@@ -5,6 +5,7 @@ import org.hamcrest.Matchers;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class UtilTest {
     private Util util;
 
