@@ -8,9 +8,7 @@ import com.axreng.backend.util.MyRequest;
 import com.axreng.backend.util.Util;
 import spark.Spark;
 
-import java.util.List;
-
-public class WebCrawler {
+public class Main {
 
     public static void main(String[] args) {
         String baseUrl = System.getenv("BASE_URL");
@@ -22,9 +20,14 @@ public class WebCrawler {
         CrawlController crawlController = new CrawlController(crawlService);
         crawlController.initializeRoutes(baseUrl);
 
-        Spark.port(4567);
+        String host = "testapp.axreng.com";
+        int port = 4567;
+
+        Spark.ipAddress(host);
+        Spark.port(port);
+
         Spark.awaitInitialization();
 
-        System.out.println("Server started on port 4567");
+        System.out.println("Server started on " + host + ":" + port);
     }
 }
