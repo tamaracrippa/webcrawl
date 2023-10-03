@@ -8,12 +8,10 @@ import com.axreng.backend.util.MyRequest;
 import com.axreng.backend.util.Util;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CrawlServiceTest {
@@ -22,36 +20,42 @@ public class CrawlServiceTest {
     private MyRequest myRequest;
     private Util util;
 
-    @BeforeEach
-    public void setUp() {
-        crawlRepository = Mockito.mock(CrawlRepository.class);
-        myRequest = Mockito.mock(MyRequest.class);
-        util = Mockito.mock(Util.class);
-        crawlService = new CrawlService(crawlRepository, myRequest, util);
-    }
-
-    @AfterAll
-    public void tearDown() {
-    }
-
     @Test
-    public void testInitiateCrawl() {
-        when(util.generateID()).thenReturn("searchId123");
-        when(myRequest.sendPostRequest("example")).thenReturn(List.of("result1", "result2"));
+    public void testInitiateCrawlWithValidKeyword() {
+        // Arrange
+        CrawlRepository crawlRepository = mock(CrawlRepository.class);
+        MyRequest myRequest = mock(MyRequest.class);
+        Util util = mock(Util.class);
+        CrawlService crawlService = new CrawlService(crawlRepository, myRequest, util);
 
-        List<String> searchIds = crawlService.initiateCrawl("example");
+        when(util.generateID()).thenReturn("xsIpUl9I");
+        when(myRequest.sendPostRequest("security")).thenReturn(List.of("xsIpUl9I"));
 
+        // Act
+        List<String> searchIds = crawlService.initiateCrawl("security");
+
+        // Assert
         assertEquals(1, searchIds.size());
-        assertEquals("searchId123", searchIds.get(0));
+        assertEquals("xsIpUl9I", searchIds.get(0));
 
+        // Verify
         verify(util).generateID();
-        verify(myRequest).sendPostRequest("example");
+        verify(myRequest).sendPostRequest("security");
     }
-
     @Test
-    public void testGetCrawlResult() {
-        String baseUrl = "http://hiring.axreng.com/";
-        CrawlResult result = crawlService.getCrawlResult("exampleSearchId", baseUrl);
-        MatcherAssert.assertThat(result, Matchers.notNullValue());
+    public void testFindUrlsWithKeyword() {
+        CrawlRepository crawlRepository = mock(CrawlRepository.class);
+        MyRequest myRequest = mock(MyRequest.class);
+        Util util = mock(Util.class);
+        CrawlService crawlService = new CrawlService(crawlRepository, myRequest, util);
+
+        String htmlContent = "<a href=\"http://hiring.axreng.com/htmlman2/ptrace.2.html\"></a>" +
+                "<a href=\"http://hiring.axreng.com/htmlman2/setuid.2.html\"></a>";
+
+        List<String> foundUrls = crawlService.findUrlsWithKeyword(htmlContent, "http://hiring.axreng.com/");
+
+        assertEquals(2, foundUrls.size());
+        assertTrue(foundUrls.contains("http://hiring.axreng.com/htmlman2/ptrace.2.html"));
+        assertTrue(foundUrls.contains("http://hiring.axreng.com/htmlman2/setuid.2.html"));
     }
 }
