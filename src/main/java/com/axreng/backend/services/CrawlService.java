@@ -94,7 +94,7 @@ public class CrawlService {
         return foundUrls;
     }
 
-    private List<String> findUrlsWithKeyword(String htmlContent, String baseUrl) {
+    public List<String> findUrlsWithKeyword(String htmlContent, String baseUrl) {
         List<String> urls = new ArrayList<>();
         Pattern pattern = Pattern.compile("<a\\s+(?:[^>]*?\\s+)?href=([\"'])(.*?)\\1");
 
